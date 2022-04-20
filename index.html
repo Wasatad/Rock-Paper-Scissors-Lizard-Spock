@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Rock, Paper, Scissors, Lizard, Spock</title>
+  </head>
+  <body>
+    <div class="rules">
+      <div onclick="event.stopPropagation()" class="rules-wrapper">
+        <div class="rules-header">
+          <div class="rules-title">RULES</div>
+          <img class="close-top" src="/src/close.svg" alt="" />
+        </div>
+        <img class="rules-img" src="/src/rules.svg" alt="" />
+        <img class="close-bottom" src="/src/close.svg" alt="" />
+      </div>
+    </div>
+    <div class="container">
+      <div class="header">
+        <div class="title">
+          <div>ROCK</div>
+          <div>PAPER</div>
+          <div>SCISSORS</div>
+          <div>LIZARD</div>
+          <div>SPOCK</div>
+        </div>
+        <div class="count">
+          <div class="label">SCORE</div>
+          <div class="score">0</div>
+        </div>
+      </div>
+
+      <div class="play-field">
+        <div class="play-field-wrapper">
+          <img class="path" src="./src/path.svg" alt="" />
+          <div class="scissors-container">
+            <div class="user-choice">
+              <div class="choice-label">YOU PICKED</div>
+              <img class="scissors icon" src="./src/Scissors.svg" alt="" />
+            </div>
+            <div class="result">
+              <div class="result-text">YOU WIN</div>
+              <div class="result-btn">PLAY AGAIN</div>
+            </div>
+            <div class="computer-choice">
+              <div class="choice-label">THE HOUSE PICKED</div>
+              <img class="scissors icon" src="./src/placeholder.svg" alt="" />
+            </div>
+          </div>
+          <div class="paper-container">
+            <div class="user-choice">
+              <div class="choice-label">YOU PICKED</div>
+              <img class="paper icon" src="./src/Paper.svg" alt="" />
+            </div>
+            <div class="result">
+              <div class="result-text">YOU WIN</div>
+              <div class="result-btn">PLAY AGAIN</div>
+            </div>
+            <div class="computer-choice">
+              <div class="choice-label">THE HOUSE PICKED</div>
+              <img class="paper icon" src="./src/placeholder.svg" alt="" />
+            </div>
+          </div>
+          <div class="rock-container">
+            <div class="user-choice">
+              <div class="choice-label">YOU PICKED</div>
+              <img class="rock icon" src="./src/Rock.svg" alt="" />
+            </div>
+            <div class="result">
+              <div class="result-text">YOU WIN</div>
+              <div class="result-btn">PLAY AGAIN</div>
+            </div>
+            <div class="computer-choice">
+              <div class="choice-label">THE HOUSE PICKED</div>
+              <img class="rock icon" src="./src/placeholder.svg" alt="" />
+            </div>
+          </div>
+
+          <div class="lizard-container">
+            <div class="user-choice">
+              <div class="choice-label">YOU PICKED</div>
+              <img class="lizard icon" src="./src/Lizard.svg" alt="" />
+            </div>
+            <div class="result">
+              <div class="result-text">YOU WIN</div>
+              <div class="result-btn">PLAY AGAIN</div>
+            </div>
+            <div class="computer-choice">
+              <div class="choice-label">THE HOUSE PICKED</div>
+              <img class="lizard icon" src="./src/placeholder.svg" alt="" />
+            </div>
+          </div>
+
+          <div class="spock-container">
+            <div class="user-choice">
+              <div class="choice-label">YOU PICKED</div>
+              <img class="spock icon" src="./src/Spock.svg" alt="" />
+            </div>
+            <div class="result">
+              <div class="result-text">YOU WIN</div>
+              <div class="result-btn">PLAY AGAIN</div>
+            </div>
+            <div class="computer-choice">
+              <div class="choice-label">THE HOUSE PICKED</div>
+              <img class="spock icon" src="./src/placeholder.svg" alt="" />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="rules-btn">RULES</div>
+    </div>
+    <script src="./main.js"></script>
+  </body>
+</html>
