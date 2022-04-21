@@ -1,15 +1,13 @@
-let variants = document.querySelectorAll(".container div[class$=container]");
-console.log(variants);
-
+//Set initial score
 let score = localStorage.getItem("score") ? +localStorage.getItem("score") : 0;
 
 document.querySelector(".score").innerText = score;
 
+//Find all items and add click listeners
+let variants = document.querySelectorAll(".container div[class$=container]");
 for (let element of variants) {
   element.querySelector(".user-choice").addEventListener("click", choseVariant);
 }
-
-// z-indexes for mobile
 
 // Detect click and hide other variants
 let activeItem = "";
@@ -22,22 +20,23 @@ function choseVariant(event) {
   document.querySelector(".path").style.display = "none";
 
   activeItem = event.target;
-  positionActiveElement();
+  playRound();
 }
 
-function positionActiveElement() {
+function playRound() {
   let chosenBlock = activeItem.closest("div[class$=container]");
 
   if (window.innerWidth < 500) {
+    // Mobile (Change position settings and making chosen item bigger) -->
     document.querySelector(".container .header").style.margin = "0 auto 130px";
     chosenBlock.querySelector(".computer-choice").style.display = "flex";
-    chosenBlock.style.position = "static"; //вернуть на absolute
+    chosenBlock.style.position = "static";
     chosenBlock.querySelector(".user-choice .icon").style.width = "150px";
     chosenBlock.querySelector(".user-choice").style.width = "150px";
-    chosenBlock.style.flexDirection = "column"; //вернуть в конце на row
-    chosenBlock.style.justifyContent = "space-between"; //вернуть в конце на center
-
+    chosenBlock.style.flexDirection = "column";
+    chosenBlock.style.justifyContent = "space-between";
     chosenBlock.style.padding = "90px 0 80px";
+    // <-- Mobile
   } else {
     // Desktop -->
     chosenBlock.querySelector(".computer-choice").style.display = "flex";
@@ -45,8 +44,8 @@ function positionActiveElement() {
     chosenBlock.style.left = "-160px";
     chosenBlock.querySelector(".user-choice .icon").style.width = "300px";
     chosenBlock.querySelector(".user-choice").style.width = "300px";
+    // Desktop <--
   }
-  // Desktop <--
 
   chosenBlock.querySelector(".computer-choice").style.opacity = "1";
 
@@ -54,8 +53,10 @@ function positionActiveElement() {
     chosenBlock.querySelector(".computer-choice").style.visibility = "visible";
 
     if (window.innerWidth < 500) {
+      // Mobile -->
       chosenBlock.querySelector(".computer-choice").style.width = "150px";
       chosenBlock.querySelector(".computer-choice .icon").style.width = "150px";
+      // <-- Mobile
     } else {
       // Desktop -->
       chosenBlock.querySelector(".computer-choice").style.width = "300px";
@@ -72,13 +73,12 @@ function positionActiveElement() {
     setTimeout(() => {
       chosenBlock.style.position = "static";
 
-      // Desktop -->
       if (window.innerWidth > 500) {
+        // Desktop -->
         document.querySelector(".container .header").style.margin =
           "0 auto 150px";
+        // <-- Desktop
       }
-
-      // Desktop <--
 
       chosenBlock.querySelector(".user-choice .choice-label").style.opacity =
         "1";
@@ -104,7 +104,7 @@ function positionActiveElement() {
     function getRandomItem() {
       setTimeout(() => {
         function random() {
-          let count = Math.floor(Math.random() * (5 - 0) + 1);
+          let count = Math.floor(Math.random() * 5 + 1);
           let imgName = imgArray[count - 1];
           if (
             itemSrcIndex == count ||
@@ -120,6 +120,8 @@ function positionActiveElement() {
           }
         }
         random();
+
+        // Slides animation -->
         setTimeout(() => {
           random();
           setTimeout(() => {
@@ -141,7 +143,7 @@ function positionActiveElement() {
                         chosenBlock.querySelector(".result").style.height =
                           "110px";
                       }
-
+                      // Animation end and compare user option and generated option
                       checkResult();
                     }, 500);
                   }, 150);
@@ -157,14 +159,7 @@ function positionActiveElement() {
   generateComputerChoice();
 
   function checkResult() {
-    console.log(chosenBlock.querySelector(".user-choice img").src);
-    console.log(chosenBlock.querySelector(".computer-choice img").src);
-
-    if (window.innerWidth < 500) {
-      chosenBlock.querySelector(".result-text").style.transform = "scale(1)";
-    } else {
-      chosenBlock.querySelector(".result-text").style.transform = "scale(1)";
-    }
+    chosenBlock.querySelector(".result-text").style.transform = "scale(1)";
 
     chosenBlock.querySelector(".result-btn").style.position = "relative";
     chosenBlock.querySelector(".result-btn").style.zIndex = "10";
@@ -314,9 +309,6 @@ function positionActiveElement() {
       chosenBlock.querySelector(".computer-choice").style.visibility = "hidden";
 
       chosenBlock.querySelector(".result").style.display = "none";
-      // chosenBlock.querySelector(".result").style.height = "0px";
-
-      // Desktop -->
 
       if (window.innerWidth < 500) {
         chosenBlock.querySelector(".computer-choice").style.width = "105px";
@@ -335,8 +327,6 @@ function positionActiveElement() {
         chosenBlock.querySelector(".computer-choice .icon").style.width =
           "150px";
       }
-
-      // Desktop <--
 
       chosenBlock.querySelector(".user-choice .choice-label").style.opacity =
         "0";
@@ -382,9 +372,7 @@ function positionActiveElement() {
         document.querySelector(
           ".play-field-wrapper .scissors-container"
         ).style.left = "96px";
-        // Desktop <--
       }
-      // Desktop -->
 
       //Reset paper style
       if (window.innerWidth < 500) {
@@ -402,14 +390,12 @@ function positionActiveElement() {
           ".play-field-wrapper .paper-container .computer-choice"
         ).style.display = "none";
       } else {
-        // Desktop -->
         document.querySelector(
           ".play-field-wrapper .paper-container"
         ).style.top = "64px";
         document.querySelector(
           ".play-field-wrapper .paper-container"
         ).style.left = "260px";
-        // Desktop <--
       }
 
       //Reset rock style
@@ -428,14 +414,12 @@ function positionActiveElement() {
           ".play-field-wrapper .rock-container .computer-choice"
         ).style.display = "none";
       } else {
-        // Desktop -->
         document.querySelector(
           ".play-field-wrapper .rock-container"
         ).style.top = "248px";
         document.querySelector(
           ".play-field-wrapper .rock-container"
         ).style.left = "195px";
-        // Desktop <--
       }
 
       //Reset lizard style
@@ -454,14 +438,12 @@ function positionActiveElement() {
           ".play-field-wrapper .lizard-container .computer-choice"
         ).style.display = "none";
       } else {
-        // Desktop -->
         document.querySelector(
           ".play-field-wrapper .lizard-container"
         ).style.top = "248px";
         document.querySelector(
           ".play-field-wrapper .lizard-container"
         ).style.left = "0";
-        // Desktop <--
       }
 
       //Reset spock style
@@ -480,20 +462,18 @@ function positionActiveElement() {
           ".play-field-wrapper .spock-container .computer-choice"
         ).style.display = "none";
       } else {
-        // Desktop -->
         document.querySelector(
           ".play-field-wrapper .spock-container"
         ).style.top = "64px";
         document.querySelector(
           ".play-field-wrapper .spock-container"
         ).style.left = "-66px";
-        // Desktop <--
       }
 
       for (let element of variants) {
         element.style.display = "";
       }
-    }, 500); //500
+    }, 500);
   }
 }
 
