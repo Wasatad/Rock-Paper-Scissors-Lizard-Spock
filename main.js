@@ -179,8 +179,7 @@ function playRound() {
     }
 
     // User choose Paper
-
-    if (/Paper/.test(chosenBlock.querySelector(".user-choice img").src)) {
+    else if (/Paper/.test(chosenBlock.querySelector(".user-choice img").src)) {
       if (
         /Rock/.test(chosenBlock.querySelector(".computer-choice img").src) ||
         /Spock/.test(chosenBlock.querySelector(".computer-choice img").src)
@@ -194,8 +193,7 @@ function playRound() {
     }
 
     // User choose Rock
-
-    if (/Rock/.test(chosenBlock.querySelector(".user-choice img").src)) {
+    else if (/Rock/.test(chosenBlock.querySelector(".user-choice img").src)) {
       if (
         /Lizard/.test(chosenBlock.querySelector(".computer-choice img").src) ||
         /Scissors/.test(chosenBlock.querySelector(".computer-choice img").src)
@@ -209,8 +207,7 @@ function playRound() {
     }
 
     // User choose Lizard
-
-    if (/Lizard/.test(chosenBlock.querySelector(".user-choice img").src)) {
+    else if (/Lizard/.test(chosenBlock.querySelector(".user-choice img").src)) {
       if (
         /Spock/.test(chosenBlock.querySelector(".computer-choice img").src) ||
         /Paper/.test(chosenBlock.querySelector(".computer-choice img").src)
@@ -224,8 +221,7 @@ function playRound() {
     }
 
     // User choose Spock
-
-    if (/Spock/.test(chosenBlock.querySelector(".user-choice img").src)) {
+    else if (/Spock/.test(chosenBlock.querySelector(".user-choice img").src)) {
       if (
         /Scissors/.test(
           chosenBlock.querySelector(".computer-choice img").src
