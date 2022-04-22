@@ -113,13 +113,12 @@ function playRound() {
             random();
           } else {
             itemSrcIndex = count;
-            console.log(itemSrcIndex);
+
             chosenBlock.querySelector(".computer-choice img").src = `./src/${
               imgArray[itemSrcIndex - 1]
             }`;
           }
         }
-        random();
 
         // Slides animation -->
         setTimeout(() => {
