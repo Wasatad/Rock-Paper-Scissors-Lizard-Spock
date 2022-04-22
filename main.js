@@ -475,8 +475,8 @@ document.querySelector(".close-top").addEventListener("click", hideRules);
 document.querySelector(".close-bottom").addEventListener("click", hideRules);
 
 function showRules() {
+  window.innerHeight;
   document.querySelector(".rules").style.display = "flex";
-  document.querySelector("body").style.overflow = "hidden";
   setTimeout(() => {
     document.querySelector(".rules-wrapper").style.transform = "translateY(0)";
   }, 100);
@@ -485,6 +485,5 @@ function hideRules() {
   document.querySelector(".rules-wrapper").style.transform = "translateY(200%)";
   setTimeout(() => {
     document.querySelector(".rules").style.display = "none";
-    document.querySelector("body").style.overflow = "visible";
   }, 400);
 }
