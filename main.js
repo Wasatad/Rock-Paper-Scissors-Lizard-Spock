@@ -238,7 +238,6 @@ function playRound() {
 
     function scoreIncrement() {
       score += 1;
-      console.log(score);
       localStorage.setItem("score", score);
       document.querySelector(".score").innerText =
         localStorage.getItem("score");
@@ -251,7 +250,6 @@ function playRound() {
         score = 0;
       }
 
-      console.log(score);
       localStorage.setItem("score", score);
       document.querySelector(".score").innerText =
         localStorage.getItem("score");
@@ -288,8 +286,6 @@ function playRound() {
       } else {
         chosenBlock.style.top = "16px";
       }
-
-      console.log(2);
     }, 340);
 
     // Set initial parameters
@@ -480,6 +476,7 @@ document.querySelector(".close-bottom").addEventListener("click", hideRules);
 
 function showRules() {
   document.querySelector(".rules").style.display = "flex";
+  document.querySelector("body").style.overflow = "hidden";
   setTimeout(() => {
     document.querySelector(".rules-wrapper").style.transform = "translateY(0)";
   }, 100);
@@ -488,5 +485,6 @@ function hideRules() {
   document.querySelector(".rules-wrapper").style.transform = "translateY(200%)";
   setTimeout(() => {
     document.querySelector(".rules").style.display = "none";
+    document.querySelector("body").style.overflow = "visible";
   }, 400);
 }
