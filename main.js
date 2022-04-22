@@ -475,10 +475,11 @@ document.querySelector(".close-top").addEventListener("click", hideRules);
 document.querySelector(".close-bottom").addEventListener("click", hideRules);
 
 function showRules() {
+  window.scrollTo(0, 0);
   document.body.style.overflow = "hidden";
   document.querySelector(".rules").style.display = "flex";
+
   setTimeout(() => {
-    window.scrollTo(0, 0);
     document.querySelector(".rules-wrapper").style.transform = "translateY(0)";
   }, 100);
 }
