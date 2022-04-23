@@ -159,8 +159,6 @@ function playRound() {
 
   function checkResult() {
     chosenBlock.querySelector(".result-text").style.transform = "scale(1)";
-    console.log(chosenBlock.querySelector(".user-choice img"));
-    console.log(chosenBlock.querySelector(".user-choice img").src);
 
     chosenBlock.querySelector(".result-btn").style.position = "relative";
     chosenBlock.querySelector(".result-btn").style.zIndex = "10";
@@ -169,11 +167,15 @@ function playRound() {
       .querySelector(".user-choice img")
       .src.split("/");
     let userChoice = userAdress[userAdress.length - 1];
+    console.log(userAdress);
+    console.log(userChoice);
 
     let computerAdress = chosenBlock
       .querySelector(".computer-choice img")
       .src.split("/");
     let computerChoice = computerAdress[userAdress.length - 1];
+    console.log(computerAdress);
+    console.log(computerChoice);
 
     // User choose Scissors
 
