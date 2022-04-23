@@ -187,7 +187,6 @@ function playRound() {
 
     // User choose Paper
     else if (/Paper/.test(userChoice)) {
-      console.log("Paper");
       if (/Rock/.test(computerChoice) || /Spock/.test(computerChoice)) {
         chosenBlock.querySelector(".result-text").innerText = "YOU WIN";
         scoreIncrement();
@@ -199,7 +198,6 @@ function playRound() {
 
     // User choose Rock
     else if (/Rock/.test(userChoice)) {
-      console.log("Rock");
       if (/Lizard/.test(computerChoice) || /Scissors/.test(computerChoice)) {
         chosenBlock.querySelector(".result-text").innerText = "YOU WIN";
         scoreIncrement();
@@ -211,7 +209,6 @@ function playRound() {
 
     // User choose Lizard
     else if (/Lizard/.test(userChoice)) {
-      console.log("Lizard");
       if (/Spock/.test(computerChoice) || /Paper/.test(computerChoice)) {
         chosenBlock.querySelector(".result-text").innerText = "YOU WIN";
         scoreIncrement();
@@ -223,7 +220,6 @@ function playRound() {
 
     // User choose Spock
     else if (/Spock/.test(userChoice)) {
-      console.log("Spock");
       if (/Scissors/.test(computerChoice) || /Rock/.test(computerChoice)) {
         chosenBlock.querySelector(".result-text").innerText = "YOU WIN";
         scoreIncrement();
