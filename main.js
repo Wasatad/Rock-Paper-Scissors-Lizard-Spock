@@ -159,6 +159,7 @@ function playRound() {
 
   function checkResult() {
     chosenBlock.querySelector(".result-text").style.transform = "scale(1)";
+    console.log(chosenBlock.querySelector(".user-choice img"));
     console.log(chosenBlock.querySelector(".user-choice img").src);
 
     chosenBlock.querySelector(".result-btn").style.position = "relative";
