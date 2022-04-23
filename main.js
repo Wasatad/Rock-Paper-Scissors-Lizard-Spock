@@ -163,24 +163,19 @@ function playRound() {
     chosenBlock.querySelector(".result-btn").style.position = "relative";
     chosenBlock.querySelector(".result-btn").style.zIndex = "10";
 
-    let userAdress = chosenBlock
+    let userImgAdress = chosenBlock
       .querySelector(".user-choice img")
       .src.split("/");
-    let userChoice = userAdress[userAdress.length - 1];
-    console.log(userAdress);
-    console.log(userChoice);
+    let userChoice = userImgAdress[userImgAdress.length - 1];
 
-    let computerAdress = chosenBlock
+    let computerImgAdress = chosenBlock
       .querySelector(".computer-choice img")
       .src.split("/");
-    let computerChoice = computerAdress[userAdress.length - 1];
-    console.log(computerAdress);
-    console.log(computerChoice);
+    let computerChoice = computerImgAdress[computerImgAdress.length - 1];
 
     // User choose Scissors
 
     if (/Scissors/.test(userChoice)) {
-      console.log("Scissors");
       if (/Lizard/.test(computerChoice) || /Paper/.test(computerChoice)) {
         chosenBlock.querySelector(".result-text").innerText = "YOU WIN";
         scoreIncrement();
@@ -203,12 +198,9 @@ function playRound() {
     }
 
     // User choose Rock
-    else if (/Rock/.test(chosenBlock.querySelector(".user-choice img").src)) {
+    else if (/Rock/.test(userChoice)) {
       console.log("Rock");
-      if (
-        /Lizard/.test(chosenBlock.querySelector(".computer-choice img").src) ||
-        /Scissors/.test(chosenBlock.querySelector(".computer-choice img").src)
-      ) {
+      if (/Lizard/.test(computerChoice) || /Scissors/.test(computerChoice)) {
         chosenBlock.querySelector(".result-text").innerText = "YOU WIN";
         scoreIncrement();
       } else {
@@ -218,12 +210,9 @@ function playRound() {
     }
 
     // User choose Lizard
-    else if (/Lizard/.test(chosenBlock.querySelector(".user-choice img").src)) {
+    else if (/Lizard/.test(userChoice)) {
       console.log("Lizard");
-      if (
-        /Spock/.test(chosenBlock.querySelector(".computer-choice img").src) ||
-        /Paper/.test(chosenBlock.querySelector(".computer-choice img").src)
-      ) {
+      if (/Spock/.test(computerChoice) || /Paper/.test(computerChoice)) {
         chosenBlock.querySelector(".result-text").innerText = "YOU WIN";
         scoreIncrement();
       } else {
@@ -233,14 +222,9 @@ function playRound() {
     }
 
     // User choose Spock
-    else if (/Spock/.test(chosenBlock.querySelector(".user-choice img").src)) {
+    else if (/Spock/.test(userChoice)) {
       console.log("Spock");
-      if (
-        /Scissors/.test(
-          chosenBlock.querySelector(".computer-choice img").src
-        ) ||
-        /Rock/.test(chosenBlock.querySelector(".computer-choice img").src)
-      ) {
+      if (/Scissors/.test(computerChoice) || /Rock/.test(computerChoice)) {
         chosenBlock.querySelector(".result-text").innerText = "YOU WIN";
         scoreIncrement();
       } else {
