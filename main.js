@@ -168,6 +168,7 @@ function playRound() {
     // User choose Scissors
 
     if (/Scissors/.test(chosenBlock.querySelector(".user-choice img").src)) {
+      console.log("Scissors");
       if (
         /Lizard/.test(chosenBlock.querySelector(".computer-choice img").src) ||
         /Paper/.test(chosenBlock.querySelector(".computer-choice img").src)
@@ -182,6 +183,7 @@ function playRound() {
 
     // User choose Paper
     else if (/Paper/.test(chosenBlock.querySelector(".user-choice img").src)) {
+      console.log("Paper");
       if (
         /Rock/.test(chosenBlock.querySelector(".computer-choice img").src) ||
         /Spock/.test(chosenBlock.querySelector(".computer-choice img").src)
@@ -196,6 +198,7 @@ function playRound() {
 
     // User choose Rock
     else if (/Rock/.test(chosenBlock.querySelector(".user-choice img").src)) {
+      console.log("Rock");
       if (
         /Lizard/.test(chosenBlock.querySelector(".computer-choice img").src) ||
         /Scissors/.test(chosenBlock.querySelector(".computer-choice img").src)
@@ -210,6 +213,7 @@ function playRound() {
 
     // User choose Lizard
     else if (/Lizard/.test(chosenBlock.querySelector(".user-choice img").src)) {
+      console.log("Lizard");
       if (
         /Spock/.test(chosenBlock.querySelector(".computer-choice img").src) ||
         /Paper/.test(chosenBlock.querySelector(".computer-choice img").src)
@@ -224,6 +228,7 @@ function playRound() {
 
     // User choose Spock
     else if (/Spock/.test(chosenBlock.querySelector(".user-choice img").src)) {
+      console.log("Spock");
       if (
         /Scissors/.test(
           chosenBlock.querySelector(".computer-choice img").src
