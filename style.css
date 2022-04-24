@@ -435,13 +435,15 @@ body {
 
 @media (max-width: 500px) {
   .rules {
-    height: 2000px;
+    height: 100vh;
+    min-height: -webkit-fill-available;
     overflow: hidden;
   }
 
   .rules-wrapper {
     width: 100%;
-    height: 100%;
+    height: 100vh;
+    min-height: -webkit-fill-available;
 
     align-items: center;
     justify-content: flex-start;
