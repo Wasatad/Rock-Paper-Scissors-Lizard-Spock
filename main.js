@@ -470,14 +470,12 @@ document.querySelector(".close-bottom").addEventListener("click", hideRules);
 function showRules() {
   window.scrollTo(0, 0);
   document.body.style.overflow = "hidden";
-  document.body.style.maxHeight = "100vh";
 
   setTimeout(() => {
     document.querySelector(".rules").style.display = "flex";
     setTimeout(() => {
       document.querySelector(".rules-wrapper").style.transform =
         "translateY(0)";
-      window.scrollTo(0, 0);
     }, 400);
   }, 500);
 }
