@@ -477,6 +477,7 @@ function showRules() {
     setTimeout(() => {
       document.querySelector(".rules-wrapper").style.transform =
         "translateY(0)";
+      window.scrollTo(0, 0);
     }, 400);
   }, 500);
 }
