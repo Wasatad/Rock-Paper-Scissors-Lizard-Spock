@@ -440,7 +440,7 @@ body {
     height: 100vh;
     overflow: hidden;
 
-    pointer-events: none;
+    touch-action: none;
   }
 
   .rules-wrapper {
@@ -464,8 +464,6 @@ body {
     bottom: 100px;
     left: 50%;
     transform: translateX(-50%);
-
-    pointer-events: auto;
   }
 
   .close-top {
