@@ -428,14 +428,14 @@ body {
 
 .close-bottom {
   width: 50px;
-  margin: -50px auto;
+  /* margin: -50px auto; */
   /* position: absolute; */
   display: none;
 }
 
 @media (max-width: 500px) {
   .rules {
-    height: 1000px;
+    height: 2000px;
     overflow: hidden;
   }
 
@@ -452,7 +452,7 @@ body {
     padding: 0;
   }
   .rules-img {
-    margin: 0 auto 150px;
+    margin: 0 auto 60px;
   }
 
   .close-bottom {
