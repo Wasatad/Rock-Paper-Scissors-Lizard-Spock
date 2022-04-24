@@ -461,7 +461,7 @@ body {
 
   .close-bottom {
     display: block;
-    bottom: 100px;
+    bottom: 130px;
     left: 50%;
     transform: translateX(-50%);
   }
@@ -471,7 +471,7 @@ body {
   }
 
   .rules-title {
-    margin: 70px auto 20px;
+    margin: 50px auto 20px;
   }
 }
 
