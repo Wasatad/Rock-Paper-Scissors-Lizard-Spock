@@ -467,14 +467,6 @@ document.querySelector(".rules").addEventListener("click", hideRules);
 document.querySelector(".close-top").addEventListener("click", hideRules);
 document.querySelector(".close-bottom").addEventListener("click", hideRules);
 
-window.addEventListener("resize", () => {
-  let vh = window.innerHeight * 0.01;
-  document.documentElement.style.setProperty("--vh", `${vh}px`);
-});
-
-let vh = window.innerHeight * 0.01;
-document.documentElement.style.setProperty("--vh", `${vh}px`);
-
 function showRules() {
   window.scrollTo(0, 0);
 
@@ -485,7 +477,7 @@ function showRules() {
     setTimeout(() => {
       document.querySelector(".rules-wrapper").style.transform =
         "translateY(0)";
-    }, 100);
+    }, 400);
   }, 500);
 }
 function hideRules() {
