@@ -436,11 +436,15 @@ body {
 @media (max-width: 500px) {
   .rules {
     height: 1000px;
+    overflow: hidden;
   }
 
   .rules-wrapper {
     width: 100%;
-    height: 100vh;
+    height: 100%;
+
+    align-items: center;
+    justify-content: flex-start;
 
     overflow: hidden;
 
@@ -463,7 +467,7 @@ body {
   }
 
   .rules-title {
-    margin: 80px auto 60px;
+    margin: 50px auto 20px;
   }
 }
 
