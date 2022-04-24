@@ -8,12 +8,7 @@ img {
   display: block;
 }
 
-:root {
-  --app-height: 100%;
-}
-
 body {
-  /* overflow: hidden; */
   margin: 0px;
   -webkit-font-smoothing: antialiased;
   scroll-behavior: smooth;
@@ -440,8 +435,7 @@ body {
 @media (max-width: 500px) {
   .rules-wrapper {
     width: 100%;
-    height: 100%;
-    height: var(--app-height);
+    height: 100vh;
     border-radius: 0;
     padding: 0;
   }

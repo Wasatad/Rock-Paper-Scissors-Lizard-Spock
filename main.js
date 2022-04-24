@@ -467,20 +467,17 @@ document.querySelector(".rules").addEventListener("click", hideRules);
 document.querySelector(".close-top").addEventListener("click", hideRules);
 document.querySelector(".close-bottom").addEventListener("click", hideRules);
 
-const appHeight = () => {
-  const doc = document.documentElement;
-  doc.style.setProperty("--app-height", `${window.innerHeight}px`);
-};
-window.addEventListener("resize", appHeight);
-appHeight();
-
 function showRules() {
-  document.body.style.overflow = "hidden";
-  document.querySelector(".rules").style.display = "flex";
-
+  window.scrollTo(0, 0);
   setTimeout(() => {
-    document.querySelector(".rules-wrapper").style.transform = "translateY(0)";
-  }, 100);
+    document.body.style.overflow = "hidden";
+    document.querySelector(".rules").style.display = "flex";
+
+    setTimeout(() => {
+      document.querySelector(".rules-wrapper").style.transform =
+        "translateY(0)";
+    }, 100);
+  }, 500);
 }
 function hideRules() {
   document.body.style.overflow = "visible";
